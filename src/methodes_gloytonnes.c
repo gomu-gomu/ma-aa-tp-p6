@@ -10,15 +10,21 @@ void sac_a_dos(int capacite, int poids[], int valeurs[], int size)
     for (w = 0; w <= capacite; w++)
     {
       if (i == 0 || w == 0)
+      {
         K[i][w] = 0;
+      }
       else if (poids[i - 1] <= w)
+      {
         K[i][w] = (valeurs[i - 1] + K[i - 1][w - poids[i - 1]] > K[i - 1][w]) ? valeurs[i - 1] + K[i - 1][w - poids[i - 1]] : K[i - 1][w];
+      }
       else
+      {
         K[i][w] = K[i - 1][w];
+      }
     }
   }
 
-  printf("Valeur maximale que l'on peut emporter: %d\n", K[size][capacite]);
+  printf("Valeur maximale que l'on peut emporter: %d.\n\n", K[size][capacite]);
 }
 
 int main()
@@ -31,7 +37,6 @@ int main()
   int size = sizeof(valeurs) / sizeof(valeurs[0]);
 
   sac_a_dos(capacite, poids, valeurs, size);
-  printf("\n\n");
 
   return 0;
 }
