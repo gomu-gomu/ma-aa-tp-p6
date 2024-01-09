@@ -17,9 +17,6 @@ jobs:
     - name: Install CMake and GNU Make
       run: sudo apt-get -y install cmake make
 
-    # - name: Change to Build Directory
-    #   run: cd build
-
     - name: Run CMake
       run: cmake ./../
       working-directory: ./build
