@@ -17,20 +17,25 @@ jobs:
     - name: Install CMake and GNU Make
       run: sudo apt-get -y install cmake make
 
-    - name: Change to Build Directory
-      run: cd build
+    # - name: Change to Build Directory
+    #   run: cd build
 
     - name: Run CMake
       run: cmake ./../
+      working-directory: ./build
 
     - name: Build Application
       run: make
+      working-directory: ./build
 
     - name: Run diviser_pour_regner
       run: make run_diviser_pour_regner
+      working-directory: ./build
 
     - name: Run methodes_gloytonnes
       run: make run_methodes_gloytonnes
+      working-directory: ./build
 
     - name: Run programmation_dynamique
       run: make run_programmation_dynamique
+      working-directory: ./build
