@@ -10,7 +10,17 @@ Source code is under the [src](./src/) folder
 
 ## Usage
 
-Solutions can be run via:
+First you'll need to generate the build files using cmake.
+
+```sh
+cd ./build
+```
+
+```sh
+cmake ../
+```
+
+Build all sources the generated Makefile.
 
 ```sh
 make

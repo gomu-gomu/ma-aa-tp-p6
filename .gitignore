@@ -1,2 +1,4 @@
-build
+out/
+build/*
+!build/.gitkeep
 .vscode
